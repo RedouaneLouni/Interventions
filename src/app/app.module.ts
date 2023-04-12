@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +15,8 @@ import { ProblemeComponent } from './probleme/probleme.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
