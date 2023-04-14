@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { VerifierCaracteresValidator } from '../shared/longueur-minimum/longueur-minimum.component';
 import { TypeproblemeService } from './typeprobleme.service';
 import { ITypeProbleme } from './typeprobleme';
+import { emailMatcherValidator } from '../shared/email-matcher/email-matcher.component';
 
 @Component({
   selector: 'app-probleme',
@@ -53,7 +54,7 @@ export class ProblemeComponent implements OnInit {
     
     
      if (notifyVia === 'courriel') {
-     /*courrielGroupControl.setValidators([Validators.compose([emailMatcher])])*/
+     courrielGroupControl.setValidators([Validators.compose([emailMatcherValidator.courrielDifferents()])])
      courrielControl.setValidators([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]);
      courrielConfirmationControl.setValidators([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]);
      courrielControl.enable();
